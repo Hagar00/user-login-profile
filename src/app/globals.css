@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+/* Default tab styling */
+.p-tabview .p-tabview-nav li {
+  border: 0.05em solid rgb(224, 224, 224) !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  border-bottom: none !important;
+}
+
+/* Tab link styling */
+.p-tabview .p-tabview-nav li a {
+  font-weight: 500 !important;
+  color: black !important; /* Default text color */
+}
+
+/* Active tab styling */
+.p-tabview .p-tabview-nav li.p-highlight {
+  border-bottom: 2px solid #EC232B !important; /* Red underline */
+}
+
+.p-tabview .p-tabview-nav li.p-highlight a {
+  color: #EC232B !important;
+  font-weight: 700 !important; 
+  background-color: transparent !important; 
+}
+
+
+.p-tabview .p-tabview-nav li.p-highlight .pi {
+  color: #EC232B !important;
+}
+
+.p-tabview .p-tabview-nav li:hover {
+  border-bottom: 2px solid rgb(224, 224, 224) !important; 
+}
+
+.p-tabview .p-tabview-nav li:hover a {
+  color: black !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight:focus,
+.p-tabview .p-tabview-nav li.p-highlight a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
