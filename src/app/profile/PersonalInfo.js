@@ -1,8 +1,9 @@
 import React from 'react'
-import { useProfileStore } from '../components/store';
+
 import {
     formatDate,
   } from '../utility/Utilitis'
+import { useProfileStore } from '../store/useStore';
 function Personality() {
     const { profile} = useProfileStore();
   return (

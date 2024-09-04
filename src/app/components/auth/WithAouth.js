@@ -2,13 +2,16 @@
 'use client';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation'; // Use this for App Router
-import { useTokenStore, useRefreshTokenStore } from '../components/store';
+import { useRefreshTokenStore, useTokenStore } from '../../store/useStore';
+
 
 const withAuth = (WrappedComponent) => {
   const AuthenticatedComponent = (props) => {
     const router = useRouter();
     const token = useTokenStore((state) => state.token);
     const refreshToken = useRefreshTokenStore((state) => state.refreshToken);
+
+
 
     useEffect(() => {
       if (!token || !refreshToken) {

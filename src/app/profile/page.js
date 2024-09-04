@@ -1,17 +1,18 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect ,useCallback} from 'react';
 import Image from 'next/image';
 import axios from 'axios';
-import { useProfileStore ,useTokenStore } from '../components/store';
 import BreadCrumbs from '../components/BreadCrumbs'
 import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';
 import Taps from './Taps'
+import { useProfileStore, useTokenStore } from '../store/useStore';
 const ProfilePage = () => {
   const { profile, setProfile, error, setError } = useProfileStore();
   const token = useTokenStore(state => state.token);
   const router = useRouter();
-  const fetchProfile = async () => {
+  
+  const fetchProfile = useCallback(async () => {
     try {
       if (!token) {
         throw new Error('No token provided');
@@ -30,7 +31,7 @@ const ProfilePage = () => {
       console.error('Error fetching profile data:', error);
       setError(error.message || 'An error occurred while fetching profile data.');
     }
-  };
+  }, [token, setProfile, setError]);
 
   useEffect(() => {
     if (!token) {
@@ -38,9 +39,9 @@ const ProfilePage = () => {
     }
   }, [token, router]);
 
-  useEffect(() => {
+    useEffect(() => {
     fetchProfile();
-  }, []);
+  }, [fetchProfile]);
 
   if (!profile) {
     return <div>Loading...</div>;
