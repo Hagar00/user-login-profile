@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
-import { useProfileStore ,useTokenStore } from '../components/store'; 
+import { useProfileStore ,useTokenStore } from '../components/store';
 import BreadCrumbs from '../components/BreadCrumbs'
 import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';

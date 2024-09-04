@@ -1,12 +1,13 @@
 import React from 'react'
 import { TabView, TabPanel } from 'primereact/tabview';
-import Personalinfo from './Personalinfo';
+import Personality from './Personalinfo';
+
 function Taps() {
   return (
     <div className='mt-4 '>
      <TabView>
     <TabPanel header="Personal Information" leftIcon="pi pi-user mr-2">
-       <Personalinfo/>
+       <Personality/>
     </TabPanel>
     <TabPanel header="Professional Information" leftIcon="pi pi-shopping-bag mr-2">
         <p className="m-0">

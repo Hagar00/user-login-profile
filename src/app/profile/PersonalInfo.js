@@ -3,7 +3,7 @@ import { useProfileStore } from '../components/store';
 import {
     formatDate,
   } from '../utility/Utilitis'
-function Personalinfo() {
+function Personality() {
     const { profile} = useProfileStore();
   return (
     <div className='p-5'>
@@ -70,4 +70,4 @@ function Personalinfo() {
   )
 }
 
-export default Personalinfo
+export default Personality
