@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import logo from '../../../public/cypartal logo 1.svg';
 import { useRouter } from 'next/navigation';
