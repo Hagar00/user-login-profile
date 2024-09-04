@@ -40,7 +40,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     fetchProfile();
-  }, [token]);
+  }, []);
 
   if (!profile) {
     return <div>Loading...</div>;
